@@ -1,4 +1,5 @@
-﻿import express from "express";
+import express from "express";
+import cors from "cors";
 import dotenv from "dotenv";
 import { connectDB } from "./config/db";
 import authRoutes from "./routes/authRoutes";
@@ -10,6 +11,7 @@ const app = express();
 
 // ─── Middleware ───────────────────────────────────────────────────────────────
 
+app.use(cors());
 app.use(express.json());
 
 // Ensure DB is connected on every serverless request (cached — no new connection opened)
