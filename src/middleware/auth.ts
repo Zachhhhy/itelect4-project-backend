@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 import { JwtPayload } from "../types";
 
-export function protect(req: Request, res: Response, next: NextFunction): void {
+export function requireAuth(req: Request, res: Response, next: NextFunction): void {
   // 1. Check for Authorization header
   const authHeader = req.headers.authorization;
 
@@ -26,3 +26,6 @@ export function protect(req: Request, res: Response, next: NextFunction): void {
     res.status(401).json({ success: false, message: "Not authorized. Token is invalid or expired." });
   }
 }
+
+// Keep the existing name used by the submission routes.
+export const protect = requireAuth;
