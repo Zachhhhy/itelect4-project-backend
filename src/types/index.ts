@@ -10,7 +10,7 @@ export interface IUser {
   password: string;
 }
 
-export interface IUserDocument extends IUser, Document {}
+export interface IUserDocument extends IUser, Document { }
 
 // ─── Submission ───────────────────────────────────────────────────────────────
 
@@ -25,7 +25,7 @@ export interface ISubmission {
   score?: number;
 }
 
-export interface ISubmissionDocument extends ISubmission, Document {}
+export interface ISubmissionDocument extends ISubmission, Document { }
 
 // ─── Auth ─────────────────────────────────────────────────────────────────────
 
@@ -42,3 +42,15 @@ declare global {
     }
   }
 }
+
+// ─── Course ───────────────────────────────────────────────────────────────────
+
+export interface Course {
+  code: string;
+  title: string;
+  units: number;
+  semester: string;
+}
+
+export type CourseDoc = Pick<Course, "code" | "title" | "units" | "semester">;
+
