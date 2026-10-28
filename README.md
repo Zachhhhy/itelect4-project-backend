@@ -186,4 +186,6 @@ The backend is deployed on **Vercel** as a serverless function via `vercel.json`
 | `JWT_SECRET` | Your JWT signing secret |
 | `CORS_ORIGIN` | `https://itelect4-project-wheat.vercel.app` |
 
+[![CI](https://github.com/Zachhhhy/itelect4-project-backend/actions/workflows/ci.yml/badge.svg)](https://github.com/Zachhhhy/itelect4-project-backend/actions/workflows/ci.yml)
+
 > **Security:** Never commit your `.env` file. It is excluded via `.gitignore`. Always set secrets through the Vercel dashboard.
